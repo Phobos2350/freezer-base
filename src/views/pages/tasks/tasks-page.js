@@ -99,15 +99,12 @@ export class TasksPage extends Component {
 
         <div className="g-col">
           <TaskFilters filter={this.props.filterType} />
+          <TaskForm handleSubmit={this.props.createTask} />
           <TaskList
             removeTask={this.props.removeTask}
             tasks={sortedList}
             updateTask={this.props.updateTask}
           />
-        </div>
-
-        <div className="g-col">
-          <TaskForm handleSubmit={this.props.createTask} />
         </div>
 
         {this.props.notification.display ? this.renderNotification() : null}
