@@ -1,0 +1,54 @@
+@import 'views/styles/shared';
+
+
+.btn {
+  @include button-base;
+  outline: none;
+  border: 0;
+  padding: 0;
+  overflow: hidden;
+  transform: translate(0, 0);
+  background: transparent;
+}
+
+.btn--icon {
+  border-radius: 40px;
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+}
+
+.btn--save {
+  background: #85bf6b !important;
+  color: #DFDEDE !important;
+}
+
+.btn--stop {
+  background: #BE5353 !important;
+  color: #DFDEDE !important;
+}
+
+.btn--save:hover {
+  color: #383838 !important;
+}
+
+.btn--stop:hover {
+  color: #383838 !important;
+}
+
+.freezer--icon {
+  border-radius: 8px;
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+}
+
+.info--icon {
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  text-align: center;
+  font-size: 1em;
+  font-weight: 100;
+}
