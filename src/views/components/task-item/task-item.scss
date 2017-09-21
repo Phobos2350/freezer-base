@@ -38,12 +38,10 @@
   }
 
   &:first-child {
-    padding-right: 20px;
+    padding-right: 5px;
     flex: 1;
-    padding-right: 30px;
     overflow: hidden;
   }
-
 }
 
 
@@ -85,6 +83,14 @@
 
   &:hover {
     color: #FFF;
+  }
+
+  &:active {
+    background: #262626;
+  }
+
+  &.active {
+    color: #85bf6b;
   }
 
 }

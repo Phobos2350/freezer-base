@@ -117,7 +117,7 @@ export class TaskItem extends Component {
     if (task.freezer) {
       return (
         <Button 
-          className={classNames('freezer--icon', 'task-item__button', 'task-item__info')}
+          className={classNames('freezer--icon', 'task-item__button', 'task-item__info', { 'hide': this.state.editing })}
           onClick={this.changeFzr} >
           <Icon name="home" />
         </Button>
@@ -126,7 +126,7 @@ export class TaskItem extends Component {
     else if (!task.freezer) {
       return (
         <Button 
-          className={classNames('freezer--icon', 'task-item__button', 'task-item__info')}
+          className={classNames('freezer--icon', 'task-item__button', 'task-item__info', { 'hide': this.state.editing })}
           onClick={this.changeFzr}>
           <Icon name="directions_car" />
         </Button>
@@ -134,15 +134,6 @@ export class TaskItem extends Component {
     }
   }
 
-  renderDrawer(task) {
-    return (
-      <Button 
-        className={classNames('info--icon', 'task-item__button', 'task-item__info')}
-        onClick={this.changeDrw}>
-        {task.drawer}
-      </Button>
-    );
-  }
 
   renderTitleInput(task) {
     return (
@@ -178,30 +169,30 @@ export class TaskItem extends Component {
         </div>
 
         <div className="cell">
-          {this.renderFreezer(task)}
-        </div>
-
-        <div className="cell">
-          {this.renderDrawer(task)}
-        </div>
-
-        <div className="cell">
           <Button
             className={classNames('btn--icon', 'task-item__button', {'hide': !editing})}
             onClick={this.decrQty}>
             <Icon name="remove" />
           </Button>
-        </div>
-
-        <div className="cell">
           {this.renderQty(task)}
-        </div>
-
-        <div className="cell">
           <Button
             className={classNames('btn--icon', 'task-item__button', {'hide': !editing})}
             onClick={this.incrQty}>
             <Icon name="add" />
+          </Button>
+        </div>
+
+        <div className="cell">
+          {this.renderFreezer(task)}
+          <Button 
+            className={classNames('info--icon', 'task-item__button', 'task-item__info', { 'hide': editing })}
+            onClick={this.changeDrw}>
+            {task.drawer}
+          </Button>
+          <Button
+            className={classNames('freezer--icon', 'task-item__info', {'active': task.basket, 'hide': editing})}
+            onClick={this.toggleStatus}>
+            <Icon name="shopping_basket" />
           </Button>
         </div>
 
@@ -217,12 +208,7 @@ export class TaskItem extends Component {
             <Icon name="clear" />
           </Button>
           <Button
-            className={classNames('btn--icon', 'task-item__button', {'active': task.basket, 'hide': editing})}
-            onClick={this.toggleStatus}>
-            <Icon name="shopping_basket" />
-          </Button>
-          <Button
-            className={classNames('btn--icon', 'task-item__button', {'hide': editing})}
+            className={classNames('btn--icon', 'task-item__button', {'hide': !editing})}
             onClick={this.remove}>
             <Icon name="delete" />
           </Button>
