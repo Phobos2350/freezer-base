@@ -15,7 +15,7 @@ const Header = ({authenticated, signOut}) => (
         <ul className="header__actions">
           {authenticated ? <li><Button onClick={signOut}>Sign out</Button></li> : null}
           <li>
-            <a className="link link--github" target="_blank" rel="noopener noreferrer" href="https://github.com/r-park/todo-react-redux">
+            <a className="link link--github" target="_blank" rel="noopener noreferrer" href="https://github.com/Phobos2350/freezer-base">
               <GitHubLogo />
             </a>
           </li>
