@@ -1,6 +1,6 @@
 {
   "name": "freezer-base",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Freezer Inventory App with Create React App, React Redux, and Firebase, based on todo-react-redux",
   "homepage": "https://freezer-base.firebaseapp.com",
   "repository": {

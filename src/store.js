@@ -6,7 +6,9 @@ import history from './history';
 import reducers from './reducers';
 import createRavenMiddleware from "raven-for-redux";
 
-Raven.config('https://e6a467fdb39f4286a9c2112ae69b6fb4@sentry.io/217280').install()
+Raven.config('https://e6a467fdb39f4286a9c2112ae69b6fb4@sentry.io/217280', {
+  release: '1.0.2'
+}).install()
 
 export default (initialState = {}) => {
   let middleware = applyMiddleware(createRavenMiddleware(Raven), thunk, routerMiddleware(history));
